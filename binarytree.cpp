@@ -166,11 +166,7 @@ BinaryTree::BinaryTree() {
 BinaryTree::BinaryTree(std::string data)
 {
     while (data.find(' ') != data.npos) data.erase(data.find(' '), 1);
-    //std::string nums = data;
-    //while (nums.find('(') != nums.npos) nums.erase(nums.find('('), 1);
-    //while (nums.find(')') != nums.npos) nums.erase(nums.find(')'), 1);
     std::cout << "current string: " << data << std::endl;
-    //std::cout << "current nums: " << nums << std::endl;
 
     // Обработка ошибок
     if (charCount(data, '(') < charCount(data, ')')) {

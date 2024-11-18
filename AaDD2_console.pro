@@ -8,6 +8,7 @@ CONFIG += c++17 cmdline
 
 SOURCES += \
         application.cpp \
+        avltree.cpp \
         binarytree.cpp \
         main.cpp \
         node.cpp
@@ -24,6 +25,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     application.h \
+    avltree.h \
     binarytree.h \
     node.h \
     type.h
