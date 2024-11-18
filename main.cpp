@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     bt.showTree(bt.getRoot(), 0, 0);
     std::cout << "\n\n\n";
 
+    /*
     std::vector<std::string> newStr = parseString(str);
     int i = 0;
     while (!newStr.empty()) {
@@ -20,6 +21,7 @@ int main(int argc, char *argv[])
         i++;
     }
 
+    */
     bt.deleteTree();
     std::cout << "End!";
     return 0;
