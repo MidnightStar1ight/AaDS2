@@ -6,6 +6,7 @@
 #include <QFile>
 #include <string>
 #include <vector>
+#include <cctype>
 
 class BinaryTree
 {

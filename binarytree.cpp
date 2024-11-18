@@ -196,18 +196,18 @@ BinaryTree::BinaryTree(std::string data)
     data.erase(data.size()-1, 1);
     //std::cout << "current string: " << data << std::endl;
 
-    //std::vector<std::string> vData = parseString(data);
+    std::vector<std::string> vData = parseString(data);
 
     Node* currNode = nullptr;
     Node* tempNode = nullptr;
 
-    for (char currSymbol: data) {
+    for (std::string currSymbol: vData) {
         if (this->root == nullptr) {
-            this->root = new Node(type(currSymbol)-'0', nullptr);
+            this->root = new Node(std::stod(currSymbol), nullptr);
             currNode = this->root;
             continue;
         }
-        if (currSymbol == '(') {
+        if (currSymbol == "(") {
             if ((currNode->left != nullptr) && (currNode->right != nullptr)) {
                 std::cout << "Error: '" << currNode->data << "' has more than 2 childs" << std::endl;
                 this->root = nullptr;
@@ -232,11 +232,11 @@ BinaryTree::BinaryTree(std::string data)
                 tempNode->right = currNode;
             }
         }
-        else if (currSymbol == ')')
+        else if (currSymbol == ")")
             currNode = currNode->parent;
         else {
             //currNode = new Node(type(currSymbol), nullptr);
-            currNode->data = type(currSymbol)-'0';
+            currNode->data = std::stod(currSymbol);
 
         }
     }
@@ -256,7 +256,8 @@ void BinaryTree::deleteTree(Node*& root)
     else root = nullptr;
 }
 
-std::vector<std::string> parseString(const std::string& input) {
+std::vector<std::string> BinaryTree::parseString(const std::string &input)
+{
     std::vector<std::string> result;
     std::string currentNumber;
 
