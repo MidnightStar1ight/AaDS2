@@ -2,21 +2,18 @@
 #define BINARYTREE_H
 
 #include <node.h>
-#include <iostream>
-#include <QFile>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <cctype>
+#include <algorithm>
 
-using namespace std;
 
 class BinaryTree
 {
 protected:
     Node* root = nullptr;
-    const std::string file = "./tree.txt";
-    //QFile data;
-    //data.open("tree.txt");
+    //std::ifstream data("tree.txt");
     int charCount(std::string str, char ch);
     void deleteTree(Node*& root);
     std::vector<std::string> parseString(const std::string& input); // Да, эта функция из ChatGPT

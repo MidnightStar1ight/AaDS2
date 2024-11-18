@@ -155,6 +155,8 @@ void BinaryTree::showTree(Node* tree, int level = 0, bool isRight = false)
     }
 
     std::cout << tree->data << "\n";
+    //std::cout << tree->height << "\n";
+    //std::cout << tree->heightDiff() << "\n";
 
     showTree(tree->left, level + 1);
 }

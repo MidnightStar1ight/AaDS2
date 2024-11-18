@@ -2,6 +2,8 @@
 #define NODE_H
 
 #include <type.h>
+#include <iostream>
+
 
 class Node
 {
@@ -15,6 +17,7 @@ public:
     Node(type data);
     Node(type data, Node* parent);
     Node(type data, int height);
+    int heightDiff();
 };
 
 #endif // NODE_H
