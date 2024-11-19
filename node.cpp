@@ -5,6 +5,7 @@ Node::Node() {}
 Node::Node(type data)
 {
     this->data = data;
+    this->height = 1;
 }
 
 Node::Node(type data, Node* parent = nullptr) {
@@ -21,6 +22,20 @@ int Node::heightDiff()
 {
     if (!this->left && !this->right) return 0;
     if (!this->left) return this->right->height;
-    if (!this->right) return this->left->height;
-    return std::abs(this->left->height - this->right->height);
+    if (!this->right) return -this->left->height;
+    return this->right->height - this->left->height;
+}
+
+void Node::fixHeight()
+{
+    int hl, hr;
+    if (!this->left)
+        hl = 0;
+    else
+        hl = this->left->height;
+    if (!this->right)
+        hr = 0;
+    else
+        hr = this->right->height;
+    this->height = (hl>hr ? hl : hr)+1;
 }

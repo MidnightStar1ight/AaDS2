@@ -7,6 +7,7 @@ class Application
 {
 public:
     Application();
+    void input();
     int exec();
 };
 

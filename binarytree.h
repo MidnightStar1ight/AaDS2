@@ -7,6 +7,7 @@
 #include <vector>
 #include <cctype>
 #include <algorithm>
+#include <queue>
 
 
 class BinaryTree
@@ -30,6 +31,7 @@ public:
     void directBypass(Node* root);
     void symmetricBypass(Node* root);
     void reversedBypass(Node* root);
+    void wideBypass(Node* root);
     void bybass(Node* root, char choice);
     void showTree(Node* tree, int level, bool isRight);
     BinaryTree();

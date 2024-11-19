@@ -18,6 +18,7 @@ public:
     Node(type data, Node* parent);
     Node(type data, int height);
     int heightDiff();
+    void fixHeight();
 };
 
 #endif // NODE_H

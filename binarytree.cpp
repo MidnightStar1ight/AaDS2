@@ -125,20 +125,40 @@ void BinaryTree::reversedBypass(Node* root) {
     }
 }
 
+void BinaryTree::wideBypass(Node *root)
+{
+    std::queue<Node*> elements;
+    elements.push(root);
+    while (!elements.empty()) {
+        root = elements.front();
+        elements.pop();
+        std::cout << root->data << " ";
+        if (root->left)
+            elements.push(root->left);
+        if (root->right)
+            elements.push(root->right);
+    }
+}
+
 void BinaryTree::bybass(Node *root, char choice)
 {
     if (choice == 'd') {
         std::cout << "Tree with direct bypass: ";
         directBypass(root);
     }
-    if (choice == 's') {
+    else if (choice == 's') {
         std::cout << "Tree with symmetric bypass: ";
         symmetricBypass(root);
     }
-    if (choice == 'r') {
+    else if (choice == 'r') {
         std::cout << "Tree with reversed bypass: ";
         reversedBypass(root);
     }
+    else if (choice == 'w') {
+        std::cout << "Tree with wide bypass: ";
+        wideBypass(root);
+    }
+    else std::cout << "Wrong choice!" << std::endl;
 }
 
 void BinaryTree::showTree(Node* tree, int level = 0, bool isRight = false)
