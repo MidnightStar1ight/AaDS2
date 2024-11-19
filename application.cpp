@@ -13,8 +13,8 @@ void Application::input() {
 
 int Application::exec()
 {
-    std::string str = "(10 (11 (12)))";
-    //std::string str = "(9 (6 (3 (1 (2)) (4 (5))) (8 (7))) (17 (16 (12 (11 (10)) (14 (13) (15)))) (20 (19 (18)) (21))))";
+    //std::string str = "(10 (11 (12)))";
+    std::string str = "(9 (6 (3 (1 (2)) (4 (5))) (8 (7))) (17 (16 (12 (11 (10)) (14 (13) (15)))) (20 (19 (18)) (21))))";
     BinaryTree bt(str);
     bt.bybass(bt.getRoot(), 's');
     if (bt.getRoot() == nullptr) std::cout << "No root!" << std::endl;
@@ -66,17 +66,17 @@ int Application::exec()
         if (choice == 1) {
             avlt.showTree(root, 0, 0);
         }
-        else if (choice == 2) { // Не работает
+        else if (choice == 2) {
             std::cout << "Enter an element to add: ";
             std::cin >> element;
             input();
-            if (element == avlt.search(root, element)->data) std::cout << "\n" "This element already exists!" << std::endl;
+            if (avlt.search(root, element)) std::cout << "\n" "This element already exists!" << std::endl;
             else {
                 avlt.insert(element, root);
                 std::cout << "\n" "A new element has been added!" << std::endl;
             }
         }
-        else if (choice == 3) { // Не работает
+        else if (choice == 3) {
             std::cout << "Enter an element to delete: ";
             std::cin >> element;
             input();
